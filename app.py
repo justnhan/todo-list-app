@@ -13,10 +13,16 @@ def list_tasks():
             print("[ ]",tasks[i]['name'])
 def complete_task(task_index):
     tasks [task_index] ['completed']=True
+def delete_task(task_index):
+    try:
+        del tasks[task_index]
+    except IndexError:
+        print("---chỉ số không hợp lệ. Không thể xóa.")
 #---Điểm bắt đầu của chương trình---
 if __name__ == "__main__":
     print("Chào mừng đến với ứng dụng To-do-list!")
     add_task("Học bài Git và Github")
     add_task("Làm bài tập thực hành ở nhà")
     complete_task(0)
+    delete_task(2)
     list_tasks()
